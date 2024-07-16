@@ -18,8 +18,10 @@ Animated Space Application is an interactive and visually engaging app that show
  <img src="https://github.com/user-attachments/assets/6796e85a-16c8-4e55-8ee5-91d37c0727cc" height=400 >
 
    ## Video
+
+   <video src ="https://github.com/user-attachments/assets/36bf42f6-fa6f-4f0d-bcbf-8b285139d72b">
    
-      https://github.com/user-attachments/assets/36bf42f6-fa6f-4f0d-bcbf-8b285139d72b
+     
 
 
 
