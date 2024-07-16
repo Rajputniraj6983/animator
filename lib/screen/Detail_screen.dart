@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:animator/modal/solar_list.dart';
 import 'package:animator/screen/Detail_screen.dart';
+import 'package:animator/screen/Homescreen.dart';
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {
@@ -38,7 +39,7 @@ class DetailScreen extends StatelessWidget {
                     height: 250,
                     width: 280,
                     child: Image.asset(
-                      'assets/jupiter1.jfif',
+                       solar[liveIndex]['img'],
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -91,9 +92,9 @@ class DetailScreen extends StatelessWidget {
                 children: [
                   Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Text(solar[index]["Km from Earth"],style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                      Text(solar[index]["Flight Duration"],style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                      Text(solar[index]["flight Prices"],style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                      Text(solar[liveIndex]["Km from Earth"],style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                      Text(solar[liveIndex]["Flight Duration"],style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                      Text(solar[liveIndex]["flight Prices"],style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
                     ],
                   ),
                   Row(mainAxisAlignment: MainAxisAlignment.spaceAround,

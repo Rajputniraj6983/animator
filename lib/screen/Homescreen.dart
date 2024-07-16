@@ -36,7 +36,7 @@ class Homescreen extends StatelessWidget {
                     return Transform.rotate(angle: value,child: child,);
                   },
                   child: Image.asset(
-                    'assets/saturn.jfif',
+                    'assets/moon.png',
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -45,9 +45,16 @@ class Homescreen extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 100, top: 100),
                 child: Container(
                   height: 250,
-                  child: Image.asset(
-                    'assets/neptune.jfif',
-                    fit: BoxFit.cover,
+                  child: TweenAnimationBuilder(
+                    duration: Duration(seconds: 1000),
+                    tween: Tween<double>(end: 100* pi,begin:  0),
+                    builder: (context,value,child){
+                      return Transform.rotate(angle: value,child: child,);
+                  },
+                    child: Image.asset(
+                      'assets/earth.png',
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
@@ -64,16 +71,17 @@ class Homescreen extends StatelessWidget {
               ),
             ],
           ),
-          InkWell(onTap: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => DetailScreen(),));
-
-          },
-            child: SizedBox(
-              height: 100,
-              child: ListView.builder(
-                itemCount: solar.length,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => Card(
+          SizedBox(
+            height: 100,
+            child: ListView.builder(
+              itemCount: solar.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) => InkWell(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => DetailScreen(),));
+                  liveIndex = index;
+                },
+                child: Card(
                   child: Image.asset(
                     solar[index]["img"],
                   ),
@@ -140,3 +148,4 @@ class Homescreen extends StatelessWidget {
         ]));
   }
 }
+int liveIndex = 0;
